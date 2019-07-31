@@ -29,6 +29,8 @@ int spanRemain = 0;
 int stepDelay = 0;
 int min_add = 5;
 
+String encdir = "";
+
 //------------------------- SETUP --------------------------------
 void setup() {
   pinMode (encoder_left, INPUT);
@@ -45,7 +47,8 @@ void setup() {
   display.setTextColor(WHITE);
 }
 
-void loop() {
+void loop() {    
+  
   //------------------------- START POSITION --------------------------------
   //Serial.println("Start angle L/R ");
   display.clearDisplay();
@@ -64,8 +67,6 @@ void loop() {
         stepper.step(-100);
         startPos = startPos - 100;
       }
-      //Serial.print("Position: ");
-      //Serial.println(startPos);
     }
     aLastState = aState;
 
@@ -198,4 +199,6 @@ void loop() {
   display.display();
   delay(1000);
   //Serial.println("Program Complete");
+  /*
+  */
 }
